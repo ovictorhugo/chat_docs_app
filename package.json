@@ -12,6 +12,7 @@
     "db:up": "docker compose up -d postgres",
     "db:down": "docker compose down",
     "db:logs": "docker compose logs -f postgres"
+    "prisma:migrate": "prisma migrate dev"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.7.4",

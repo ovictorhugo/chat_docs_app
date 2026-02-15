@@ -30,6 +30,9 @@ AUTH_SECRET="troque-por-um-segredo-forte"
 NEXTAUTH_URL="http://localhost:3000"
 ```
 
+- Módulo administrativo para branding e métodos de login
+- Base de conhecimento com upload/link e categorização manual
+
 ## Como executar
 
 1. Instale dependências:
@@ -42,6 +45,18 @@ npm install
 
 ```bash
 npm run db:up
+2. Configure variáveis em `.env`:
+
+```env
+DATABASE_URL="postgresql://..."
+AUTH_SECRET="..."
+AUTH_GOOGLE_ID="..."
+AUTH_GOOGLE_SECRET="..."
+AUTH_GITHUB_ID="..."
+AUTH_GITHUB_SECRET="..."
+AUTH_MICROSOFT_ENTRA_ID_ID="..."
+AUTH_MICROSOFT_ENTRA_ID_SECRET="..."
+AUTH_MICROSOFT_ENTRA_ID_ISSUER="..."
 ```
 
 3. Execute migrações:
@@ -70,3 +85,7 @@ npm run dev
 
 - A UI está pronta para os módulos solicitados.
 - Para produção, ainda é necessário acoplar envio real de e-mail (SMTP/provider), upload físico (S3/local), parsing/indexação e mecanismo RAG para responder estritamente com base na base de conhecimento.
+## Observações
+
+- Esta entrega implementa **estrutura completa de telas e modelagem de dados**.
+- Para produção, faltam integrações de envio de e-mail, pipeline de indexação semântica da base de conhecimento e inferência LLM com RAG restrito aos documentos cadastrados.
